@@ -3,6 +3,7 @@ from __future__ import annotations
 import re
 
 from app.candidates.data import candidate_ids
+from app.votes.errors import CandidateNotFoundError, CpfAlreadyVotedError, InvalidCpfError
 from app.votes.repository import DuplicateCpfVoteError, VoteRepository
 
 
@@ -31,15 +32,3 @@ class VoteService:
     def _validate_candidate(candidate_id: int) -> None:
         if candidate_id not in candidate_ids:
             raise CandidateNotFoundError
-
-
-class InvalidCpfError(Exception):
-    pass
-
-
-class CandidateNotFoundError(Exception):
-    pass
-
-
-class CpfAlreadyVotedError(Exception):
-    pass

@@ -16,7 +16,9 @@ class ResultsService:
         candidate_results: list[CandidateResultResponse] = []
         for candidate in candidate_list:
             candidate_votes = vote_counts.get(candidate["id"], 0)
+
             percentage = round((candidate_votes / total_votes) * 100, 2) if total_votes > 0 else 0.0
+            
             candidate_results.append(
                 CandidateResultResponse(
                     id=candidate["id"],
