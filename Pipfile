@@ -1,0 +1,18 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+fastapi = "==0.115.12"
+uvicorn = {extras = ["standard"], version = "==0.34.2"}
+sqlalchemy = "==2.0.40"
+aiosqlite = "==0.21.0"
+greenlet = "==3.2.2"
+
+[dev-packages]
+pytest = "==8.3.5"
+httpx = "==0.28.1"
+
+[requires]
+python_version = "3.11"
